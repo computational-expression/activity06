@@ -7,11 +7,16 @@
 - Use parameters to make functions flexible and reusable
 
 ## Overview
-In this activity, you will take your Lab 5 Smart Home Status Monitor code and **refactor** it using functions. Refactoring means restructuring existing code to improve its organization without changing what it does.
+In this activity, you will take Lab 5 Smart Home Status Monitor code and **refactor** it using functions. Refactoring means restructuring existing code to improve its organization without changing what it does.
+
+## Code Options
+You can use either:
+- **Your own Lab 5 implementation** (copy your `main.py` from Lab 5)
+- **The provided solution** (`src/lab5_solution.py` in this folder)
 
 ## Why Refactor with Functions?
 
-Your Lab 5 code probably had everything in one large `main()` function. While this works, it can be improved by:
+The Lab 5 code has everything in one large `main()` function. While this works, it can be improved by:
 
 - **Breaking down complex tasks** into smaller, focused functions
 - **Reducing repetition** by reusing code through function calls
@@ -121,6 +126,7 @@ def setup_hardware():
     led_hvac = Pin(14, Pin.OUT)
     led_lighting = Pin(13, Pin.OUT)
     button = Pin(12, Pin.IN, Pin.PULL_UP)
+    # Return multiple values separated by commas
     return led_security, led_hvac, led_lighting, button
 
 def test_system_leds(led_security, led_hvac, led_lighting):
@@ -138,7 +144,7 @@ def test_system_leds(led_security, led_hvac, led_lighting):
         led.off()
 
 def main():
-    # Set up hardware using function
+    # Set up hardware using function - receives multiple return values
     led_security, led_hvac, led_lighting, button = setup_hardware()
     
     # Test LEDs using function
@@ -149,7 +155,7 @@ def main():
 
 ## Steps to Complete
 
-1. **Copy your Lab 5 code** into `main.py`
+1. **Copy your Lab 5 code** into `src/main.py`
 2. **Identify repetitive code** that can be extracted into functions
 3. **Create each required function** one at a time
 4. **Test each function** as you create it
@@ -166,15 +172,12 @@ Your refactored program should:
 
 ## What to Submit
 
-- `main.py` - Your refactored Lab 5 code using the 8 required functions
+- `src/main.py` - Your refactored Lab 5 code using the 8 required functions
 - Make sure your code still runs correctly and produces the same output
 
-## Grading Criteria
+## Grading Rubric
 
-- **Function creation**: All 8 functions implemented correctly
-- **Parameter usage**: Functions use parameters effectively instead of global variables
-- **Code organization**: Main function is cleaner and more readable
-- **Functionality**: Program works the same as original Lab 5
-- **Best practices**: Good function names, appropriate return values
+This activity is assessed on a **pass/fail basis**:
 
-This activity will help you see the power of functions for organizing code and making it more maintainable!
+- **1 point**: Awarded if 50% or more of the program functionality is completed (4 or more functions)
+- **0 points**: Awarded if less than 50% of the program functionality is completed

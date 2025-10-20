@@ -9,14 +9,14 @@ Purpose: Refactor Lab 5 Smart Home Status Monitor using functions
 to improve code organization and demonstrate function concepts.
 
 Instructions:
-1. Copy your Lab 5 main.py code below
+1. Copy your Lab 5 main.py code below (or use lab5_solution.py as reference)
 2. Refactor it by creating the 8 required functions
 3. Update main() to use these functions
 4. Test to ensure it works the same as original
 
 Required Functions to Implement:
 - setup_hardware()
-- display_device_status(active_devices, available_devices)  
+- display_device_status(user_name, active_devices, available_devices)  
 - update_led_indicators(active_devices, led_security, led_hvac, led_lighting)
 - test_system_leds(led_security, led_hvac, led_lighting)
 - get_available_devices_to_turn_on(active_devices, available_devices)
@@ -34,15 +34,15 @@ import sys
 def setup_hardware():
     """Sets up and returns all hardware pin objects"""
     # TODO: Create LED and button pin objects
-    # TODO: Return all pin objects as a tuple
-    pass
+    # TODO: Return all pin objects (multiple values separated by commas)
+    # Example: return led_security, led_hvac, led_lighting, button
 
 # TODO: Create the display_device_status function  
-def display_device_status(active_devices, available_devices):
+def display_device_status(user_name, active_devices, available_devices):
     """Displays current status of active and available devices"""
-    # TODO: Show active devices list
+    # TODO: Show user's smart home status with their name
+    # TODO: Show active devices list with numbering
     # TODO: Show available devices list with count
-    pass
 
 # TODO: Create the update_led_indicators function
 def update_led_indicators(active_devices, led_security, led_hvac, led_lighting):
@@ -51,21 +51,18 @@ def update_led_indicators(active_devices, led_security, led_hvac, led_lighting):
     # TODO: Turn on HVAC LED if "thermostat" in active_devices  
     # TODO: Turn on lighting LED if "living_room_lights" in active_devices
     # TODO: Turn off LEDs for inactive devices
-    pass
 
 # TODO: Create the test_system_leds function
 def test_system_leds(led_security, led_hvac, led_lighting):
     """Tests all LED systems at startup"""
     # TODO: Test each LED system with appropriate message
     # TODO: Turn on each LED, wait 0.5 seconds, turn off
-    pass
 
 # TODO: Create the get_available_devices_to_turn_on function
 def get_available_devices_to_turn_on(active_devices, available_devices):
     """Returns list of devices that can be turned on"""
     # TODO: Create list of devices that are available but not active
     # TODO: Return the list
-    pass
 
 # TODO: Create the wait_for_button_confirmation function
 def wait_for_button_confirmation(button):
@@ -74,7 +71,6 @@ def wait_for_button_confirmation(button):
     # TODO: Wait for button press (while button.value() == 1)
     # TODO: Add debounce delay
     # TODO: Print confirmation received message
-    pass
 
 # TODO: Create the turn_on_device function
 def turn_on_device(active_devices, available_devices, button, led_security, led_hvac, led_lighting):
@@ -86,7 +82,6 @@ def turn_on_device(active_devices, available_devices, button, led_security, led_
     # TODO: Add selected device to active_devices list
     # TODO: Update LED indicators
     # TODO: Print confirmation message
-    pass
 
 # TODO: Create the turn_off_device function  
 def turn_off_device(active_devices, button, led_security, led_hvac, led_lighting):
@@ -97,7 +92,6 @@ def turn_off_device(active_devices, button, led_security, led_hvac, led_lighting
     # TODO: Remove selected device from active_devices list
     # TODO: Update LED indicators  
     # TODO: Print confirmation message
-    pass
 
 def main():
     """Main function that runs the smart home monitoring system."""
@@ -105,7 +99,7 @@ def main():
     # TODO: Replace direct hardware setup with function call
     # Example: led_security, led_hvac, led_lighting, button = setup_hardware()
     
-    # TODO: Copy and refactor your Lab 5 code here
+    # TODO: Copy your Lab 5 code here (or use lab5_solution.py as reference)
     # TODO: Replace repetitive code with function calls
     # TODO: Use the functions you created above
     
@@ -116,10 +110,10 @@ def main():
     active_devices = ["thermostat"]
     available_devices = ["thermostat", "front_door_lock", "living_room_lights"]
     
-    # TODO: Add user interaction, system testing, and main control loop
-    # TODO: Use your functions instead of inline code
-    
-    pass  # Remove this when you add your code
+    # TODO: Get user name and show welcome message
+    # TODO: Use test_system_leds() function for LED testing
+    # TODO: Use display_device_status() to show initial status
+    # TODO: Add main control loop using your refactored functions
 
 # Run the main function when the script is executed directly
 if __name__ == "__main__":
